@@ -1,7 +1,5 @@
 # Graph
 
-
-
 ## References
 
 - [Model Context Protocol (MCP)](https://neo4j.com/developer/genai-ecosystem/model-context-protocol-mcp/)

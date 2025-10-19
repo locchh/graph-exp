@@ -79,10 +79,7 @@ Use separate command and arguments:
     *Add a 5-star rating from John to The Godfather*
 
 
-
 ### [mcp-neo4j-memory](https://github.com/neo4j-contrib/mcp-neo4j/tree/main/servers/mcp-neo4j-memory)
-
-
 
 
 
