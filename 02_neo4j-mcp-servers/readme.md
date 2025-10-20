@@ -51,6 +51,8 @@ Use separate command and arguments:
 
 ### [mcp-neo4j-cypher](https://github.com/neo4j-contrib/mcp-neo4j/tree/main/servers/mcp-neo4j-cypher)
 
+A Model Context Protocol server that allow LLM to interact with Neo4j database.
+
 *Which MCP tools are available?  List their ID and description.*
 
 - `get_neo4j_schema`: List all nodes, their attributes, and their relationships to other nodes in the Neo4j database. If this fails with a message that includes "Neo.ClientError.Procedure.ProcedureNotFound", suggest that the user install and enable the APOC plugin.
@@ -80,6 +82,75 @@ Use separate command and arguments:
 
 
 ### [mcp-neo4j-memory](https://github.com/neo4j-contrib/mcp-neo4j/tree/main/servers/mcp-neo4j-memory)
+
+A Model Context Protocol server that provides persistent memory capabilities through Neo4j graph database integration. The server offers these core tools:
+
+#### 🔎 Query Tools
+- `read_graph`
+   - Read the entire knowledge graph
+   - No input required
+   - Returns: Complete graph with entities and relations
+
+- `search_nodes`
+   - Search for nodes based on a query
+   - Input:
+     - `query` (string): Search query matching names, types, observations
+   - Returns: Matching subgraph
+
+- `find_nodes`
+   - Find specific nodes by name
+   - Input:
+     - `names` (array of strings): Entity names to retrieve
+   - Returns: Subgraph with specified nodes
+
+#### ♟️ Entity Management Tools
+- `create_entities`
+   - Create multiple new entities in the knowledge graph
+   - Input:
+     - `entities`: Array of objects with:
+       - `name` (string): Name of the entity
+       - `type` (string): Type of the entity  
+       - `observations` (array of strings): Initial observations about the entity
+   - Returns: Created entities
+
+- `delete_entities` 
+   - Delete multiple entities and their associated relations
+   - Input:
+     - `entityNames` (array of strings): Names of entities to delete
+   - Returns: Success confirmation
+
+#### 🔗 Relation Management Tools
+- `create_relations`
+   - Create multiple new relations between entities
+   - Input:
+     - `relations`: Array of objects with:
+       - `source` (string): Name of source entity
+       - `target` (string): Name of target entity
+       - `relationType` (string): Type of relation
+   - Returns: Created relations
+
+- `delete_relations`
+   - Delete multiple relations from the graph
+   - Input:
+     - `relations`: Array of objects with same schema as create_relations
+   - Returns: Success confirmation
+
+#### 📝 Observation Management Tools
+- `add_observations`
+   - Add new observations to existing entities
+   - Input:
+     - `observations`: Array of objects with:
+       - `entityName` (string): Entity to add to
+       - `contents` (array of strings): Observations to add
+   - Returns: Added observation details
+
+- `delete_observations`
+   - Delete specific observations from entities
+   - Input:
+     - `deletions`: Array of objects with:
+       - `entityName` (string): Entity to delete from
+       - `observations` (array of strings): Observations to remove
+   - Returns: Success confirmation
 
 
 
