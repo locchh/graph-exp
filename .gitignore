@@ -5,3 +5,7 @@ __pycache__
 *.tar.gz
 *.rar
 uv.lock
+.pytest_cache
+.ruff_cache
+.vscode
+.ipynb_checkpoints
