@@ -5,4 +5,4 @@ openai==2.5.0
 mcp==1.18.0
 neo4j>=5.17.0,<6.0.0
 neo4j-graphrag==1.10.0
-jupyter==1.4.2
+jupyter==1.1.1
