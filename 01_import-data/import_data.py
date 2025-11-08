@@ -15,7 +15,6 @@ DATA_DIR = Path(__file__).parent / "data"
 
 driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USERNAME, NEO4J_PASSWORD))
 
-
 def run_read_query(query, parameters=None):
     """Execute a read query and return results"""
     with driver.session(database=NEO4J_DATABASE) as session:
@@ -301,17 +300,25 @@ def verify_import():
 def main():
     """Main import function"""
     try:
+        # Print header
         print("=" * 60)
         print("Neo4j Data Import Script")
         print("=" * 60)
 
+        # Clear database
         clear_database()
+
+        # Create constraints
         create_constraints()
+
+        # Import data
         import_persons()
         import_movies()
         import_acted_in_relationships()
         import_directed_relationships()
         import_ratings()
+
+        # Verify import
         verify_import()
 
         print("\n" + "=" * 60)
