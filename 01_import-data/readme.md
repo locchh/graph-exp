@@ -1,6 +1,6 @@
 # Setup
 
-```
+```bash
 docker run -d \
   --name neo4j \
   -p 7474:7474 \
