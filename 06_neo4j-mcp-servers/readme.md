@@ -1,6 +1,6 @@
-## Setup
+# MCP Servers
 
-- Neo4j:
+**Run Neo4j**
 
 ```bash
 docker run -d \
@@ -14,7 +14,11 @@ docker run -d \
   neo4j:latest
 ```
 
-- Config MCP:
+## [mcp-neo4j-cypher](https://github.com/neo4j-contrib/mcp-neo4j/tree/main/servers/mcp-neo4j-cypher)
+
+A Model Context Protocol server that allow LLM to interact with Neo4j database.
+
+Config MCP:
 
 ```json
 {
@@ -37,8 +41,6 @@ docker run -d \
 }
 ```
 
-## MCP Servers
-
 **Command Structure**
 
 Always split commands into separate pieces. Instead of one long string: `uvx mcp-neo4j-cypher --transport stdio`
@@ -49,11 +51,7 @@ Use separate command and arguments:
 {"command": "uvx", "args": ["mcp-neo4j-cypher@0.2.3", "--transport", "stdio"]}
 ```
 
-### [mcp-neo4j-cypher](https://github.com/neo4j-contrib/mcp-neo4j/tree/main/servers/mcp-neo4j-cypher)
-
-A Model Context Protocol server that allow LLM to interact with Neo4j database.
-
-*Which MCP tools are available?  List their ID and description.*
+Use this question to check available tools: *Which MCP tools are available?  List their ID and description.*
 
 - `get_neo4j_schema`: List all nodes, their attributes, and their relationships to other nodes in the Neo4j database. If this fails with a message that includes "Neo.ClientError.Procedure.ProcedureNotFound", suggest that the user install and enable the APOC plugin.
 
@@ -81,11 +79,30 @@ A Model Context Protocol server that allow LLM to interact with Neo4j database.
     *Add a 5-star rating from John to The Godfather*
 
 
-### [mcp-neo4j-memory](https://github.com/neo4j-contrib/mcp-neo4j/tree/main/servers/mcp-neo4j-memory)
+## [mcp-neo4j-memory](https://github.com/neo4j-contrib/mcp-neo4j/tree/main/servers/mcp-neo4j-memory)
 
-A Model Context Protocol server that provides persistent memory capabilities through Neo4j graph database integration. The server offers these core tools:
+A Model Context Protocol server that provides persistent memory capabilities through Neo4j graph database integration. The server offers these core tools.
 
-#### 🔎 Query Tools
+Config MCP:
+
+```json
+"mcpServers": {
+  "neo4j": {
+    "command": "uvx",
+    "args": [
+      "mcp-neo4j-memory@0.4.2",
+      "--db-url",
+      "bolt://localhost:7687",
+      "--username",
+      "neo4j",
+      "--password",
+      "password"
+    ]
+  }
+}
+```
+
+### 🔎 Query Tools
 - `read_graph`
    - Read the entire knowledge graph
    - No input required
@@ -103,7 +120,7 @@ A Model Context Protocol server that provides persistent memory capabilities thr
      - `names` (array of strings): Entity names to retrieve
    - Returns: Subgraph with specified nodes
 
-#### ♟️ Entity Management Tools
+### ♟️ Entity Management Tools
 - `create_entities`
    - Create multiple new entities in the knowledge graph
    - Input:
@@ -119,7 +136,7 @@ A Model Context Protocol server that provides persistent memory capabilities thr
      - `entityNames` (array of strings): Names of entities to delete
    - Returns: Success confirmation
 
-#### 🔗 Relation Management Tools
+### 🔗 Relation Management Tools
 - `create_relations`
    - Create multiple new relations between entities
    - Input:
@@ -135,7 +152,7 @@ A Model Context Protocol server that provides persistent memory capabilities thr
      - `relations`: Array of objects with same schema as create_relations
    - Returns: Success confirmation
 
-#### 📝 Observation Management Tools
+### 📝 Observation Management Tools
 - `add_observations`
    - Add new observations to existing entities
    - Input:
@@ -154,4 +171,4 @@ A Model Context Protocol server that provides persistent memory capabilities thr
 
 
 
-### [mcp-neo4j-data-modeling](https://github.com/neo4j-contrib/mcp-neo4j/tree/main/servers/mcp-neo4j-data-modeling)
+## [mcp-neo4j-data-modeling](https://github.com/neo4j-contrib/mcp-neo4j/tree/main/servers/mcp-neo4j-data-modeling)
