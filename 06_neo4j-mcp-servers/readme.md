@@ -208,6 +208,8 @@ Related:
 
 - [Arrows App](https://arrows.app)
 
+Example: *I need to import data from the CSV files @data into my empty Neo4j database. Please use the appropriate MCP server to help me with this task.*
+
 ### 📦 Resources
 
 The server provides these resources:
