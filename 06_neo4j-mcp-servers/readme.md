@@ -86,18 +86,20 @@ A Model Context Protocol server that provides persistent memory capabilities thr
 Config MCP:
 
 ```json
-"mcpServers": {
-  "neo4j": {
-    "command": "uvx",
-    "args": [
-      "mcp-neo4j-memory@0.4.2",
-      "--db-url",
-      "bolt://localhost:7687",
-      "--username",
-      "neo4j",
-      "--password",
-      "password"
-    ]
+{
+  "mcpServers": {
+    "neo4j-memory": {
+      "command": "uvx",
+      "args": [
+        "mcp-neo4j-memory@0.2.0"
+      ],
+      "env": {
+        "NEO4J_URL": "bolt://localhost:7687",
+        "NEO4J_USERNAME": "neo4j",
+        "NEO4J_PASSWORD": "password",
+        "NEO4J_DATABASE": "neo4j"
+      }
+    }
   }
 }
 ```
@@ -172,3 +174,32 @@ Config MCP:
 
 
 ## [mcp-neo4j-data-modeling](https://github.com/neo4j-contrib/mcp-neo4j/tree/main/servers/mcp-neo4j-data-modeling)
+
+Config:
+
+```json
+{
+  "mcpServers": {
+    "mcp-data-modeling": {
+      "command": "uvx",
+      "args": [
+        "mcp-neo4j-data-modeling@0.1.1"
+      ]
+    },
+    "mcp-cypher": {
+      "command": "uvx",
+      "args": [
+        "mcp-neo4j-cypher@0.2.3"
+      ],
+      "env": {
+        "NEO4J_URL": "bolt://localhost:7687",
+        "NEO4J_USERNAME": "neo4j",
+        "NEO4J_PASSWORD": "password",
+        "NEO4J_DATABASE": "neo4j"
+      }
+    }
+  }
+}
+```
+
+[Data Modeling Assistant Demo](https://github.com/neo4j-field/data-modeling-assistant-demo/tree/main)
