@@ -16,8 +16,8 @@
 
 - [GitHub: Neo4j Graph Academy: GenAI Fundamentals](https://github.com/neo4j-graphacademy/genai-fundamentals)
 
-- [GitHub: Neo4j Graph Academy: GenAI Integration LangChain](https://github.com/neo4j-graphacademy/genai-integration-langchain)
-
 - [GitHub: Neo4j Graph Academy: LLM Knowledge Graph Construction](https://github.com/neo4j-graphacademy/llm-knowledge-graph-construction)
+
+- [GitHub: Neo4j Graph Academy: GenAI Integration LangChain](https://github.com/neo4j-graphacademy/genai-integration-langchain)
 
 - [GitHub: Neo4j Graph Academy: GenAI MCP Neo4j Tools](https://github.com/neo4j-graphacademy/genai-mcp-neo4j-tools)
