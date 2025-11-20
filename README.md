@@ -23,3 +23,5 @@
 - [GitHub: Neo4j Graph Academy: Modeling Fundamentals](https://graphacademy.neo4j.com/courses/modeling-fundamentals)
 
 - [GitHub: Neo4j Graph Academy: GenAI MCP Neo4j Tools](https://github.com/neo4j-graphacademy/genai-mcp-neo4j-tools)
+
+- [Doc: Neo4j GraphRAG Python](https://neo4j.com/docs/neo4j-graphrag-python)
