@@ -6,6 +6,10 @@
 
 - [Doc: Astral](https://docs.astral.sh/uv/)
 
+- [Doc: NetworkX](https://networkx.org/)
+
+- [Doc: PyG](https://pytorch-geometric.readthedocs.io/en/latest/)
+
 - [Doc: Neo4j](https://neo4j.com/docs/getting-started/)
 
 - [Doc: KuzuDB](https://kuzudb.github.io/docs/)
