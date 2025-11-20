@@ -25,3 +25,17 @@
 - [GitHub: Neo4j Graph Academy: GenAI MCP Neo4j Tools](https://github.com/neo4j-graphacademy/genai-mcp-neo4j-tools)
 
 - [Doc: Neo4j GraphRAG Python](https://neo4j.com/docs/neo4j-graphrag-python)
+
+- [Graph Academy: Neo4j Cypher Fundamentals](https://graphacademy.neo4j.com/courses/cypher-fundamentals/)
+
+- [Graph Academy: Neo4j Cypher Intermediate Queries](https://graphacademy.neo4j.com/courses/cypher-intermediate-queries/)
+
+- [Graph Academy: Introduction to Vector Indexes and Unstructured Data](https://graphacademy.neo4j.com/courses/llm-vectors-unstructured/?category=intermediate)
+
+- [Graph Academy: Cypher Indexes Constraints](https://graphacademy.neo4j.com/courses/cypher-indexes-constraints/?category=intermediate)
+
+- [Graph Academy: Constructing Knowledge Graphs with Neo4j GraphRAG for Python](https://graphacademy.neo4j.com/courses/genai-graphrag-python/?category=advanced)
+
+- [Graph Academy: Introduction to Neo4j & GraphQL](https://graphacademy.neo4j.com/courses/graphql-basics/?category=intermediate)
+
+- [Graph Academy: Building GraphRAG Python MCP tools](https://graphacademy.neo4j.com/courses/genai-mcp-build-custom-tools-python/?category=intermediate)
