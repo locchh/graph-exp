@@ -1,5 +1,9 @@
 # Cypher cheatsheet
 
+[Neo4j Cypher Manual](https://neo4j.com/docs/cypher-manual/current/?_gl=1*erbvw*_ga*MTkzMzgxNTk1LjE3NTcyNTg0MzQ.*_ga_DZP8Z65KK4*czE3NjM4NjAwNzQkbzUwJGcxJHQxNzYzODg4NDAxJGoyNiRsMCRoMA..*_gcl_au*MjEzNTI4NjkxNy4xNzU3MjU4NDMzLjc4MDQ1OTczLjE3NTg0MTY3NjUuMTc1ODQxNjc2NA..*_ga_DL38Q8KGQC*czE3NjM4NjAwNzQkbzUwJGcxJHQxNzYzODg4NDAxJGoyNiRsMCRoMA..)
+
+[Neo4j Cypher Refcard](https://neo4j.com/docs/cypher-refcard/current/?_gl=1*erbvw*_ga*MTkzMzgxNTk1LjE3NTcyNTg0MzQ.*_ga_DZP8Z65KK4*czE3NjM4NjAwNzQkbzUwJGcxJHQxNzYzODg4NDAxJGoyNiRsMCRoMA..*_gcl_au*MjEzNTI4NjkxNy4xNzU3MjU4NDMzLjc4MDQ1OTczLjE3NTg0MTY3NjUuMTc1ODQxNjc2NA..*_ga_DL38Q8KGQC*czE3NjM4NjAwNzQkbzUwJGcxJHQxNzYzODg4NDAxJGoyNiRsMCRoMA..)
+
 ## Reading
 
 ### 1. Cypher pattern
@@ -134,17 +138,37 @@ RETURN p.name, r.roles
 
 ### 1. Discovering properties
 
-Discover the keys (properties) of the Person nodes in the graph by running this code:
+You can discover the keys (properties) of the Person nodes in the graph by running this code:
 
 ```cypher
 MATCH (p:Person)
 RETURN p.name, keys(p)
 ```
 
-More generally, you can run this code to return all the property keys defined in the graph.
+Discovering relationship types
+
+```cypher
+MATCH (p:Person)-[r]->(m:Movie)
+WHERE  p.name = 'Tom Hanks'
+RETURN m.title AS movie, type(r) AS relationshipType
+```
+
+You can run this code to return all the property keys defined in the graph.
 
 ```cypher
 CALL db.propertyKeys()
+```
+
+You can view the property types for nodes in the graph by executing this query:
+
+```cypher
+CALL db.schema.nodeTypeProperties()
+```
+
+You can view the property types for relationships in the graph by executing this query:
+
+```cypher
+CALL db.schema.relTypeProperties()
 ```
 
 ### 2. Discovering data model
@@ -159,6 +183,14 @@ You can find out what labels exist in the graph with this code:
 
 ```cypher
 CALL db.labels()
+```
+
+### 3. Discovering constraints
+
+You can view the constraints for nodes in the graph by executing this query:
+
+```cypher
+SHOW CONSTRAINTS
 ```
 
 ## Writing
