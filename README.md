@@ -1,19 +1,5 @@
 # Graph Experiments
 
-When constructing a knowledge graph from unstructured text, you typically follow these steps:
-
-- Gather the data
-
-- Chunk the data ( break down the data into right-sized )
-
-- Vectorize the data
-
-- Pass the data to an LLM to extract nodes and relationships
-
-- Use the output to generate the graph
-
-
-
 ## References
 
 - [App: Arrows](https://arrows.app)
@@ -61,3 +47,5 @@ When constructing a knowledge graph from unstructured text, you typically follow
 - [Graph Academy: Introduction to Neo4j & GraphQL](https://graphacademy.neo4j.com/courses/graphql-basics/?category=intermediate)
 
 - [Graph Academy: Building GraphRAG Python MCP tools](https://graphacademy.neo4j.com/courses/genai-mcp-build-custom-tools-python/?category=intermediate)
+
+- [GraphRAG](https://graphrag.com/concepts/intro-to-graphrag/)
