@@ -1,5 +1,19 @@
 # Graph Experiments
 
+When constructing a knowledge graph from unstructured text, you typically follow these steps:
+
+- Gather the data
+
+- Chunk the data ( break down the data into right-sized )
+
+- Vectorize the data
+
+- Pass the data to an LLM to extract nodes and relationships
+
+- Use the output to generate the graph
+
+
+
 ## References
 
 - [App: Arrows](https://arrows.app)
